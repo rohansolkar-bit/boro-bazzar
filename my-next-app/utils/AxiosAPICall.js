@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: process.env.API_BASE_URI || "http://localhost:5000",
+  baseURL: process.env.NODE_ENV === 'development' ? "http://localhost:5000" : process.env.NEXT_PUBLIC_API_URL || "https://boro-bazzar-backens.vercel.app",
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",
